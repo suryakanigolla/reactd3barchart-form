@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSans-Regular.ttf");
+  src: url("../assets/fonts/NotoSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSans-Medium.ttf");
+  src: url("../assets/fonts/NotoSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("../assets/fonts/NotoSans-Bold.ttf");
+  src: url("../assets/fonts/NotoSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
 :root {
   /* colors */
   --clr-main: #fafbff;
@@ -5,7 +29,7 @@
   --clr-white: #ffffff;
   --clr-blue-button: #33adff;
   --clr-hover-blue-button: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
-  --clr-form-text: #ccd2d9;
+  --clr-form-text: #b1bdc2;
   --clr-heading: #292d50;
   --clr-form-terms-text: #3c3c3c;
 
@@ -19,6 +43,9 @@
   --fs-300: 1rem;
   --fs-200: 0.875rem;
   --fs-100: 0.75rem;
+
+  /* font-families */
+  --ff-noto-sans: "Noto Sans";
 }
 
 @media (min-width: 35em) {

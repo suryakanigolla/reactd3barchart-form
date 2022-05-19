@@ -1,0 +1,51 @@
+$font-size: 1rem;
+$font-weight: 400;
+$font-color: #212529;
+$input-background: #fff;
+$border: 1px solid #ced4da;
+$border-valid: 1px solid #198754;
+$border-invalid: 1px solid #dc3545;
+$feedback-color: #dc3545;
+$font-size-feedback: 0.875rem;
+$border-radius: 0.25rem;
+$input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+.form-group {
+  &__label {
+    margin-bottom: 0.5rem;
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: 1.5;
+    color: $font-color;
+    background-color: $input-background;
+    background-clip: padding-box;
+    border: $border;
+    border-radius: $border-radius;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    transition: $input-transition;
+    position: relative;
+    &--valid {
+      border: $border-valid;
+    }
+    &--invalid {
+      border: $border-invalid;
+    }
+  }
+  &__feedback {
+    display: none;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: $font-size-feedback;
+    color: $feedback-color;
+    &--invalid {
+      display: block;
+    }
+  }
+}
