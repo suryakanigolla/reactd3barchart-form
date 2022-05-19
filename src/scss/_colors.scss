@@ -1,0 +1,38 @@
+/* background-color-classes */
+.bg-main {
+  background-color: var(--clr-main) !important;
+}
+
+.bg-background {
+  background-color: var(--clr-background) !important;
+}
+
+.bg-white {
+  background-color: var(--clr-white) !important;
+}
+
+.bg-blue-button {
+  background-color: var(--clr-blue-button) !important;
+}
+
+/* text-color-classes */
+
+.text-form {
+  color: var(--clr-form-text) !important;
+}
+
+.text-heading {
+  color: var(--clr-heading) !important;
+}
+
+.text-form-terms {
+  color: var(--clr-form-terms-text) !important;
+}
+
+/* hover-classes */
+
+.bg-blue-button-hover {
+  &:hover {
+    box-shadow: var(--clr-hover-blue-button) !important;
+  }
+}
