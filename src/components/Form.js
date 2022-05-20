@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import classNames from "classnames";
 import FormGroup from "./FormGroup";
 import FormCheck from "./FormCheck";
@@ -24,7 +24,7 @@ const initialFormErrorState = {
   termsCheckError: "",
 };
 
-const Form = () => {
+const Form = forwardRef(({ handleAnimation }, ref) => {
   const [formBody, setFormBody] = useState(initialFormState);
   const [formError, setFormError] = useState(initialFormErrorState);
 
@@ -106,12 +106,19 @@ const Form = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     for (const property in formBody) {
-      handleValidate(property, formBody[property]);
+      if (
+        formBody[property].length < 1 ||
+        formError[`${property}Error`].length > 0
+      ) {
+        handleValidate(property, formBody[property]);
+        return;
+      }
     }
+    handleAnimation(true);
   };
 
   return (
-    <form className={styles["form"]} onSubmit={handleSubmit}>
+    <form className={styles["form"]} onSubmit={handleSubmit} ref={ref}>
       <h2 className={`text-heading ${styles["form__heading"]}`}>
         Create an account
       </h2>
@@ -198,6 +205,6 @@ const Form = () => {
       </div>
     </form>
   );
-};
+});
 
 export default Form;

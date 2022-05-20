@@ -8,11 +8,19 @@
     border-radius: 10px;
     height: 100%;
     &__bg {
-      flex: 1;
+      flex: 1 1;
+      -webkit-transition: flex 400ms ease-in-out;
+      transition: flex 400ms ease-in-out;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      &--animating {
+        flex: 0 0;
+      }
+      &--noshow {
+        display: none;
+      }
       &__image {
         max-width: 80%;
         margin: 0 auto;
@@ -33,7 +41,9 @@
       }
     }
     &__primary {
-      flex: 1;
+      flex: 1 1;
+      -webkit-transition: flex 400ms ease-in-out;
+      transition: flex 400ms ease-in-out;
       display: flex;
       justify-content: center;
       align-items: center;
