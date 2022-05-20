@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react";
 import { gsap } from "gsap";
 import classNames from "classnames";
+
 import Form from "components/Form";
+import BarChart from "components/BarChart";
 
 import BackgroundImage from "assets/images/background.png";
 import BackgroundImageWebp from "assets/images/background.webp";
@@ -13,6 +15,7 @@ const App = () => {
   const [isShow, setIsShow] = useState(true);
   const formRef = useRef(null);
   const bgRef = useRef(null);
+  const barChartRef = useRef(null);
 
   const bgClassnames = classNames({
     [`${styles["App__content__bg"]}`]: true,
@@ -28,7 +31,12 @@ const App = () => {
         opacity: "0",
         onComplete: () => setIsAnimating(isAnimating),
       })
-      .to(formRef.current, { display: "none" });
+      .to(formRef.current, { display: "none" })
+      .to(barChartRef.current, {
+        opacity: "1",
+        display: "flex",
+        flexDirection: "column",
+      });
   };
 
   return (
@@ -59,6 +67,7 @@ const App = () => {
         </div>
         <div className={`bg-white ${styles["App__content__primary"]}`}>
           <Form handleAnimation={handleAnimation} ref={formRef} />
+          <BarChart ref={barChartRef} />
         </div>
       </div>
     </div>
