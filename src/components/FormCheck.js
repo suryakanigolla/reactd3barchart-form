@@ -20,7 +20,10 @@ const FormCheck = ({ text, name, inputType, value, onChange, isInvalid }) => {
         name={name}
         id={name}
       />
-      <label htmlFor={name} className={checkboxTermsClassname}>
+      <label
+        htmlFor={name}
+        className={`text-form-terms ${checkboxTermsClassname}`}
+      >
         {text}
       </label>
     </div>
