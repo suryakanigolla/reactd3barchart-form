@@ -11,12 +11,14 @@ $input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 $border-valid: 1px solid #198754;
 
 /* invalid state */
-$border-invalid: 1px solid #dc3545;
+$border-focused-invalid: 1px solid #dc3545;
 $feedback-color: #dc3545;
 
 /* focus state */
 $border-focused: 1px solid #86b7fe;
 $box-shadow-focused: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+$box-shadow-focused-invalid: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+$box-shadow-focused-valid: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 
 .form-group {
   &__label {
@@ -42,12 +44,18 @@ $box-shadow-focused: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     position: relative;
     &--valid {
       border: $border-valid;
+      &:focus {
+        box-shadow: $box-shadow-focused-valid !important;
+      }
     }
     &--invalid {
-      border: $border-invalid;
+      border: $border-focused-invalid !important;
+      &:focus {
+        box-shadow: $box-shadow-focused-invalid !important;
+      }
     }
     &:focus {
-      border-color: $border-focused;
+      border: $border-focused;
       outline: 0;
       box-shadow: $box-shadow-focused;
     }
@@ -58,6 +66,7 @@ $box-shadow-focused: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     margin-top: 0.25rem;
     font-size: $font-size-feedback;
     color: $feedback-color;
+    position: absolute;
     &--invalid {
       display: block;
     }

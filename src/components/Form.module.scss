@@ -6,7 +6,7 @@
   }
   &__inputs {
     & > * + * {
-      margin-top: 20px;
+      margin-top: 25px;
     }
   }
   &__terms {
@@ -19,6 +19,15 @@
       width: 100%;
       padding: 12px 10px !important;
       border-radius: 5px;
+    }
+    &--disabled {
+      & button {
+        color: black !important;
+        background-color: #cccccc !important;
+        &:hover {
+          box-shadow: unset !important;
+        }
+      }
     }
   }
 }

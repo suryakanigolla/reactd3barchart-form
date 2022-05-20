@@ -17,6 +17,7 @@ const FormCheck = ({ text, name, inputType, value, onChange, isInvalid }) => {
         value={value}
         onChange={onChange}
         className={checkboxClassname}
+        name={name}
         id={name}
       />
       <label htmlFor={name} className={checkboxTermsClassname}>

@@ -36,7 +36,7 @@ const FormGroup = ({
         onChange={onChange}
         type={inputType}
       />
-      <div className={styles[feedbackClassname]}>{invalidFeedback}</div>
+      <div className={`fs-100 ${feedbackClassname}`}>{invalidFeedback}</div>
     </div>
   );
 };
