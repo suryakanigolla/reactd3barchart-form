@@ -20,8 +20,8 @@ const FormGroup = ({
   });
 
   const feedbackClassname = classNames({
-    [`${"form-group__feedback"}`]: true,
-    [`${"form-group__feedback--invalid"}`]: isInvalid,
+    [`${styles["form-group__feedback"]}`]: true,
+    [`${styles["form-group__feedback--invalid"]}`]: isInvalid,
   });
 
   return (

@@ -3,16 +3,25 @@ $font-weight: 400;
 $font-color: #212529;
 $input-background: #fff;
 $border: 1px solid #ced4da;
-$border-valid: 1px solid #198754;
-$border-invalid: 1px solid #dc3545;
-$feedback-color: #dc3545;
 $font-size-feedback: 0.875rem;
 $border-radius: 0.25rem;
 $input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
+/* valid state */
+$border-valid: 1px solid #198754;
+
+/* invalid state */
+$border-invalid: 1px solid #dc3545;
+$feedback-color: #dc3545;
+
+/* focus state */
+$border-focused: 1px solid #86b7fe;
+$box-shadow-focused: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+
 .form-group {
   &__label {
     margin-bottom: 0.5rem;
+    display: inline-block;
   }
   &__input {
     display: block;
@@ -36,6 +45,11 @@ $input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     }
     &--invalid {
       border: $border-invalid;
+    }
+    &:focus {
+      border-color: $border-focused;
+      outline: 0;
+      box-shadow: $box-shadow-focused;
     }
   }
   &__feedback {

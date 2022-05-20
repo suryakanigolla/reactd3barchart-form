@@ -25,8 +25,16 @@
   color: var(--clr-heading) !important;
 }
 
+.text-bg-heading {
+  color: var(--clr-bg-heading) !important;
+}
+
 .text-form-terms {
   color: var(--clr-form-terms-text) !important;
+}
+
+.text-blue-button {
+  color: var(--clr-button-text) !important;
 }
 
 /* hover-classes */
